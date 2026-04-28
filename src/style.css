@@ -527,11 +527,17 @@ img { display: block; max-width: 100%; }
   width: clamp(300px, 38vw, 540px);
   height: auto;
   border-radius: 50%;
+  display: block;
   /* round mask to suit cartoon vibe */
   filter:
     drop-shadow(0 18px 24px rgba(0,0,0,0.5))
     drop-shadow(0 0 0 var(--ink-hard));
   animation: idle 5.5s ease-in-out infinite;
+}
+/* video element shares the same class — keep it inside the round mask */
+video.hero__charImg {
+  object-fit: cover;
+  background: var(--ink-hard);
 }
 @keyframes idle {
   0%, 100% { transform: translateY(0)    rotate(0deg); }
